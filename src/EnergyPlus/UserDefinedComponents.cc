@@ -136,7 +136,8 @@ namespace UserDefinedComponents {
                                                this->Loop(thisLoop).MassFlowRateMin,
                                                this->Loop(thisLoop).MassFlowRateMax,
                                                this->Loop(thisLoop).InletNodeNum,
-                                               this->Loop(thisLoop).OutletNodeNum);
+                                               this->Loop(thisLoop).OutletNodeNum
+                                               this->Loop(thisLoop).spaceVolume);
 
             PlantUtilities::RegisterPlantCompDesignFlow(state, this->Loop(thisLoop).InletNodeNum, this->Loop(thisLoop).DesignVolumeFlowRate);
 
@@ -386,7 +387,8 @@ namespace UserDefinedComponents {
                                                        state.dataUserDefinedComponents->UserZoneAirHVAC(CompNum).Loop(Loop).MassFlowRateMin,
                                                        state.dataUserDefinedComponents->UserZoneAirHVAC(CompNum).Loop(Loop).MassFlowRateMax,
                                                        state.dataUserDefinedComponents->UserZoneAirHVAC(CompNum).Loop(Loop).InletNodeNum,
-                                                       state.dataUserDefinedComponents->UserZoneAirHVAC(CompNum).Loop(Loop).OutletNodeNum);
+                                                       state.dataUserDefinedComponents->UserZoneAirHVAC(CompNum).Loop(Loop).OutletNodeNum,
+                                                       state.dataUserDefinedComponents->UserZoneAirHVAC(CompNum).Loop(Loop).spaceVolume);
 
                     PlantUtilities::RegisterPlantCompDesignFlow(
                         state,
@@ -502,7 +504,8 @@ namespace UserDefinedComponents {
                                                        state.dataUserDefinedComponents->UserAirTerminal(CompNum).Loop(Loop).MassFlowRateMin,
                                                        state.dataUserDefinedComponents->UserAirTerminal(CompNum).Loop(Loop).MassFlowRateMax,
                                                        state.dataUserDefinedComponents->UserAirTerminal(CompNum).Loop(Loop).InletNodeNum,
-                                                       state.dataUserDefinedComponents->UserAirTerminal(CompNum).Loop(Loop).OutletNodeNum);
+                                                       state.dataUserDefinedComponents->UserAirTerminal(CompNum).Loop(Loop).OutletNodeNum,
+                                                       state.dataUserDefinedComponents->UserAirTerminal(CompNum).Loop(Loop).spaceVolume);
 
                     PlantUtilities::RegisterPlantCompDesignFlow(
                         state,
@@ -2943,4 +2946,4 @@ namespace UserDefinedComponents {
 
 } // namespace UserDefinedComponents
 
-} // namespace EnergyPlus
+
