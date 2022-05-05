@@ -11929,7 +11929,13 @@ namespace SurfaceGeometry {
 
         initmsg = true;
         bool ShowZoneSurfaces = (state.dataInputProcessing->inputProcessor->getNumSectionsFound("SHOWZONESURFACES_DEBUG") > 0);
+        
+        // check if volume has already been initialized by user
+        if (state.dataHeatBal->Zone(ZoneNum).Volume != DataGlobalConstants::AutoCalculate) {
+            return;
+        }
 
+        
         enum class ZoneVolumeCalcMethod
         {
             Invalid = -1,
@@ -15594,3 +15600,5 @@ namespace SurfaceGeometry {
 } // namespace SurfaceGeometry
 
 } // namespace EnergyPlus
+© 2022 GitHub, Inc.
+Terms
